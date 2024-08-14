@@ -1,0 +1,213 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #4a90e2;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1;
+  padding: 10px 0;
+}
+
+.app-container {
+  width: 90%;
+  margin: 10px 0px;
+  max-width: 1200px;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Task Form Styles */
+.task-form {
+  background-color: #2a2a2a;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 20px 0;
+}
+
+.task-form label {
+  font-weight: 600;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333333;
+  color: #ffffff;
+  /* transition: all 0.3s ease; */
+  box-sizing: border-box;
+}
+
+.task-form textarea {
+  resize: none;
+  overflow-y: auto;
+}
+
+.task-form input:focus,
+.task-form textarea:focus {
+  outline: none;
+  border: 2px solid #4a90e2;
+}
+
+.task-form button {
+  background-color: #4a90e2;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-form button:hover {
+  background-color: #357abd;
+}
+
+/* Change the color of the calendar icon in the date input */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(34%) sepia(72%) saturate(3044%) hue-rotate(184deg)
+    brightness(96%) contrast(91%);
+}
+
+/* Task List Styles */
+.task-list {
+  background-color: #2a2a2a;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow-y: scroll;
+  max-height: 500px;
+  margin: 20px 0;
+}
+
+.task-list .task {
+  background-color: #333333;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-list .task:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.task-list .task h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.task-list .task p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #bbbbbb;
+}
+
+.task-list .task .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.task-list .task button {
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.task-list .task button:hover {
+  background-color: #357abd;
+}
+
+.task-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.task-list {
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.task-list {
+  -ms-overflow-style: none; /* Hide scrollbar for Edge */
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .app-container {
+    margin: 15px 0px;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 10px;
+    margin: 15px 0px;
+  }
+
+  .task-form,
+  .task-list {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+
+  .task-list .task {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-list .task .actions {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
